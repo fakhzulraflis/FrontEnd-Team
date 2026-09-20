@@ -1,9 +1,0 @@
-0000000000000000000000000000000000000000 65faf8592f4c066267b053d20acffdee02287b53 fakhzulraflis <rfakhzul@gmail.com> 1788771068 +0700	commit (initial): Initial Commit Base
-65faf8592f4c066267b053d20acffdee02287b53 65faf8592f4c066267b053d20acffdee02287b53 fakhzulraflis <rfakhzul@gmail.com> 1788771094 +0700	Branch: renamed refs/heads/main to refs/heads/main
-65faf8592f4c066267b053d20acffdee02287b53 bc58d050368390e1f30b8b07cabf976bca4acdc5 fakhzulraflis <rfakhzul@gmail.com> 1788964965 +0700	commit: Fix: File name
-bc58d050368390e1f30b8b07cabf976bca4acdc5 b71543b114f2eedc0ff0bda1b73cf42bc0063fb4 fakhzulraflis <rfakhzul@gmail.com> 1788965069 +0700	pull origin main: Merge made by the 'ort' strategy.
-b71543b114f2eedc0ff0bda1b73cf42bc0063fb4 15627a8012648e6d8d1993a5c678cc10bd6b1924 fakhzulraflis <rfakhzul@gmail.com> 1789236466 +0700	pull origin main: Fast-forward
-15627a8012648e6d8d1993a5c678cc10bd6b1924 0ce2a8d1fcf45efadeb060ef3ddeddd649827512 fakhzulraflis <rfakhzul@gmail.com> 1789353624 +0700	pull origin main: Fast-forward
-0ce2a8d1fcf45efadeb060ef3ddeddd649827512 e3652249764c6bd566b9f0d5ef89d260c94f1ecd fakhzulraflis <rfakhzul@gmail.com> 1789353843 +0700	commit: fix: judul html
-e3652249764c6bd566b9f0d5ef89d260c94f1ecd 3c0e3a88ab687b76819831b794f709e67c830e5e fakhzulraflis <rfakhzul@gmail.com> 1789356149 +0700	commit: Fix: Layout HTML
-3c0e3a88ab687b76819831b794f709e67c830e5e 54cadfedce3483cddf968ff86a9552a8e762e46c fakhzulraflis <rfakhzul@gmail.com> 1789390073 +0700	commit: feat: adding new classes to subnet calculator
