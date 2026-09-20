@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+
+:root {
+    --black: #0d0f12;
+    --blackp: #16191d;
+    --white: #f2f2f2;
+    --gray: #2a2e34;
+    --red: #f87171;
+    --cyan: #00d4ff;
+
+    --radius-card: 10px;
+    --radius-button: 8px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-margin-top: 60px;
+}
+
+body{
+    background: url(BG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: "Fira code", monospace;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+header {
+    text-align: center;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--black);
+    margin-bottom: 20px;
+
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+#containerUtama {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#kolomInput, #kolomHasil {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#containerPertama {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--blackp);
+    padding: 15px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 10px var(--cyan);
+    background-color: var(--black);
+}
+
+
+#containerKedua {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--blackp);
+    padding: 15px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 10px var(--cyan);
+    background-color: var(--black);
+}
+
+#containerPertama,
+#containerKedua {
+    flex: 1 1 300px;
+    max-width: 420px;
+}
+
+#containerPertama h2, #containerKedua h2 {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#containerPertama h3, #containerKedua h3 {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#containerPertama input {
+    display: flex;
+    height: 30px;
+    background-color: var(--blackp);
+    border-radius: 4px;
+    color: var(--white);
+    border: 1px solid var(--blackp);
+    margin-top: 5px;
+}
+
+#ip-address {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    background-color: var(--blackp);
+    border-radius: 4px;
+    color: var(--white);
+    border: 1px solid var(--blackp);
+    margin-top: 5px;
+}
+
+#containerKedua select {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    background-color: var(--blackp);
+    border-radius: 4px;
+    color: var(--white);
+    border: 1px solid var(--blackp);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#containerKedua span {
+    display: block;
+    margin: 5px auto;
+}
+
+#btn-analyze {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-radius: var(--radius-button);
+    background-color: var(--cyan);
+    border: 1px solid var(--cyan);
+    margin: 15px 0;
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#btn-clear-analyzer {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-radius: var(--radius-button);
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    margin: 15px 0;
+    color: var(--white);
+    margin-bottom: 0;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#btn-calculate {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-radius: var(--radius-button);
+    background-color: var(--cyan);
+    border: 1px solid var(--cyan);
+    margin: 15px 0;
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#btn-clear {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border-radius: var(--radius-button);
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    margin: 15px 0;
+    color: var(--white);
+    margin-bottom: 0;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#btn-analyze:hover, #btn-calculate:hover  {
+    background-color: #4de0ff;
+}
+
+#btn-clear-analyzer:hover, #btn-clear:hover {
+    background-color: #fa9a9a;
+}
+
+#btn-analyze:active, #btn-calculate:active  {
+    transform: translateY(2px);
+    background-color: #00a8cc;
+}
+
+#btn-clear-analyzer:active, #btn-clear:active {
+    transform: translateY(2px);
+    background-color: #e14f4f;
+}
+
+#resultAnalyzer {
+    border: 1px solid var(--blackp);
+    padding: 15px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 10px var(--cyan);
+    padding-bottom: 95px;
+    background-color: var(--black);
+}
+
+#resultSubnet {
+    border: 1px solid var(--blackp);
+    padding: 15px;
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 10px var(--cyan);
+    background-color: var(--black);
+}
+
+/* Teori */
+#pengertian-ip {
+    max-width: 935px;
+    margin: 20px auto;
+    padding: 20px 25px;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius-card);
+    background-color: var(--black);
+    box-shadow: 0 0 10px var(--cyan);
+}
+ 
+#pengertian-ip h2 {
+    color: var(--cyan);
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gray);
+}
+ 
+#pengertian-ip p {
+    line-height: 1.7;
+    color: var(--white);
+}
+ 
+#pengertian-ip ul {
+    line-height: 1.9;
+    padding-left: 20px;
+}
+ 
+#pengertian-ip ul ul {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-left: 22px;
+}
+
+/* Wrapper ciri-ciri */
+.ciri-ciri {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ip-class {
+    max-width: 900px;
+    margin: 10px 10px;
+    padding: 20px 25px;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius-card);
+    background-color: var(--black);
+    box-shadow: 0 0 10px var(--cyan);
+}
+ 
+.ip-class h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    color: var(--cyan);
+    border-bottom: 1px solid var(--gray);
+}
+ 
+ 
+/* Tabel di dalam card kelas */
+.ip-class table {
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+.ip-class tr {
+    border-bottom: 1px solid var(--gray);
+}
+ 
+.ip-class tr:last-child {
+    border-bottom: none;
+}
+ 
+.ip-class td {
+    padding: 8px 4px;
+}
+ 
+.ip-class td:last-child {
+    color: var(--white);
+    font-weight: 600;
+    text-align: right;
+}
+
+#subnetting-kelas-c {
+    max-width: 935px;
+    margin: 20px auto;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius-card);
+    box-shadow: 0 0 10px var(--cyan);
+    text-align: center;
+    padding: 20px 25px;
+    background-color: var(--black);
+}
+
+#subnetting-kelas-c h2 {
+    color: var(--cyan);
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 8px;
+}
+
+#subnetting-kelas-c table {
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+#subnetting-kelas-c tr {
+    border-bottom: 1px solid var(--gray);
+}
+ 
+#subnetting-kelas-c tr:last-child {
+    border-bottom: none;
+}
+ 
+#subnetting-kelas-c td {
+    padding: 8px 4px;
+}
+ 
+#subnetting-kelas-c td:last-child {
+    color: var(--white);
+    font-weight: 600;
+}
+
+footer {
+    margin: 0 0;
+    background-color: var(--black);
+    text-align: center;
+    padding-top: 5px;
+    align-content: center;
+}
+

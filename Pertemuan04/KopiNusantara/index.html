@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport meta tag: wajib agar media query bekerja benar di perangkat mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Nusantara - Kedai Kopi Rumahan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVIGASI -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Logo: ikon bulat + nama kedai, disusun dengan Flexbox -->
+      <a href="#beranda" class="logo">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">Kopi <span class="logo-accent">Nusantara</span></span>
+      </a>
+
+      <!-- Menu navigasi: turun ke bawah logo & membungkus (wrap) di layar mobile -->
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#tentang">Tentang Kami</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / BANNER -->
+    <section class="hero" id="beranda">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Sejak 2019 - Diracik di Rumah, Disajikan dengan Hati</p>
+          <h1>Secangkir Kehangatan Khas Nusantara</h1>
+          <p class="hero-desc">
+            Kopi Nusantara menghadirkan biji kopi pilihan dari pelosok Indonesia,
+            diseduh langsung setiap hari tanpa bahan pengawet. Nikmati dari layar HP,
+            tablet, atau laptop Anda - tampilan kami menyesuaikan di mana pun Anda
+            membuka halaman ini.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">Lihat Menu</a>
+            <a href="#kontak" class="btn btn-outline">Pesan Sekarang</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="images/cangkir-kopi.jpeg" alt="Ilustrasi cangkir Kopi Nusantara">
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTEN UTAMA: KARTU MENU (CSS Grid) -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <h2 class="section-title">Menu Favorit Kami</h2>
+        <p class="section-subtitle">Empat pilihan yang paling sering dipesan pelanggan kami.</p>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-icon">🥥</div>
+            <h3>Es Kopi Kelapa</h3>
+            <p>Espresso segar berpadu dengan air kelapa muda asli dan sedikit gula aren.</p>
+            <span class="price">Rp 22.000</span>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🍯</div>
+            <h3>Kopi Susu Gula Aren</h3>
+            <p>Perpaduan klasik kopi robusta lokal, susu segar, dan gula aren asli.</p>
+            <span class="price">Rp 20.000</span>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">☕</div>
+            <h3>Americano</h3>
+            <p>Espresso murni dengan air panas, cocok untuk penikmat kopi hitam.</p>
+            <span class="price">Rp 18.000</span>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-icon">🍫</div>
+            <h3>Cappuccino</h3>
+            <p>Espresso dengan foam susu lembut dan taburan bubuk cokelat.</p>
+            <span class="price">Rp 24.000</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG KAMI (Flexbox: gambar + teks) -->
+    <section class="about-section" id="tentang">
+      <div class="container about-inner">
+        <div class="about-image">
+          <img src="images/biji-kopi.jpeg" alt="Ilustrasi biji kopi Nusantara">
+        </div>
+
+        <div class="about-text">
+          <h2 class="section-title align-left">Tentang Kopi Nusantara</h2>
+          <p>
+            Berawal dari dapur rumahan di tahun 2019, Kopi Nusantara tumbuh dari
+            kecintaan terhadap biji kopi lokal Indonesia - dari Gayo, Toraja, hingga
+            Kintamani. Kami percaya secangkir kopi terbaik lahir dari proses yang
+            jujur dan bahan yang berkualitas.
+          </p>
+          <ul class="about-list">
+            <li><span class="about-icon">🌱</span> Biji kopi pilihan langsung dari petani lokal</li>
+            <li><span class="about-icon">🏠</span> Diseduh segar setiap hari di dapur rumahan kami</li>
+            <li><span class="about-icon">📱</span> Bisa dipesan kapan saja lewat WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK (Flexbox: info + formulir) -->
+    <section class="contact-section" id="kontak">
+      <div class="container contact-inner">
+        <div class="contact-info">
+          <h2 class="section-title align-left">Hubungi &amp; Pesan</h2>
+          <p>Isi formulir berikut, tim kami akan segera menghubungi Anda kembali.</p>
+          <p><strong>Alamat:</strong> Jl. Melati No. 12, Bandung</p>
+          <p><strong>WhatsApp:</strong> 0812-3456-7890</p>
+          <p><strong>Jam Buka:</strong> Setiap hari, 08.00 - 21.00</p>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama lengkap Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="4" placeholder="Tuliskan pesanan atau pertanyaan Anda" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Kopi Nusantara. Seluruh hak cipta dilindungi.</p>
+      <p class="footer-note">Dibuat sebagai contoh proyek Tugas Studi Kasus - Responsive UI, Pertemuan 4 (Front-End Programming).</p>
+    </div>
+  </footer>
+
+</body>
+</html>

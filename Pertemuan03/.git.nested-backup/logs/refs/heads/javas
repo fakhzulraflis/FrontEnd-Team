@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 15627a8012648e6d8d1993a5c678cc10bd6b1924 fakhzulraflis <rfakhzul@gmail.com> 1789236684 +0700	branch: Created from HEAD
+15627a8012648e6d8d1993a5c678cc10bd6b1924 dca724e26259bf3d49f670157b82284fd20158a8 fakhzulraflis <rfakhzul@gmail.com> 1789239387 +0700	commit: feat: add IPv4 subnet analyzer and Class C calculator validation/output in js
+dca724e26259bf3d49f670157b82284fd20158a8 957b2a7291c1b78006cc1b504d009094f8cef36e fakhzulraflis <rfakhzul@gmail.com> 1789317424 +0700	commit: Fix: Adjusting Logic & Adding readme.md details
