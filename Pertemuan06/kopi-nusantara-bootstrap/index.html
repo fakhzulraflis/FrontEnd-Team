@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport meta tag: wajib agar grid & breakpoint Bootstrap bekerja benar di mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Nusantara - Kedai Kopi Rumahan</title>
+
+  <!-- Bootstrap 5.3.3 (CDN resmi): dimuat SEBELUM CSS kustom agar bisa ditimpa -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS kustom: kustomisasi ringan warna & gaya agar sesuai identitas Kopi Nusantara -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR (Komponen Bootstrap: navbar responsif) ============
+       - navbar-expand-lg : menu mendatar mulai layar lg (>= 992px),
+                            di bawahnya berubah menjadi tombol hamburger
+       - fixed-top        : navbar tetap menempel di atas saat halaman di-scroll
+       - bg-white shadow-sm : utility class latar putih + bayangan tipis -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
+    <div class="container">
+      <!-- navbar-brand: logo. d-flex + align-items-center + gap-2 menyejajarkan ikon & teks -->
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#beranda">
+        <span class="logo-icon rounded-circle d-flex align-items-center justify-content-center">☕</span>
+        <span>Kopi <span class="logo-accent">Nusantara</span></span>
+      </a>
+
+      <!-- navbar-toggler: tombol hamburger (hanya tampil di bawah lg).
+           data-bs-toggle="collapse" + data-bs-target menghubungkannya
+           dengan menu #navMenu tanpa perlu menulis JavaScript sendiri -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu navigasi">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- collapse navbar-collapse: bagian menu yang disembunyikan/ditampilkan -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <!-- ms-auto mendorong menu ke kanan; text-center merapikan menu di mode mobile -->
+        <ul class="navbar-nav ms-auto gap-lg-3 text-center py-2 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============ HERO / BERANDA (Grid Bootstrap) ============
+         Mobile: teks & gambar bertumpuk (kolom penuh).
+         Laptop (lg): teks 7/12 kolom di kiri, gambar 5/12 kolom di kanan. -->
+    <section class="hero py-5" id="beranda">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <!-- text-center di mobile, text-lg-start (rata kiri) mulai layar lg -->
+          <div class="col-12 col-lg-7 text-center text-lg-start">
+            <p class="eyebrow fw-semibold mb-2">Sejak 2019 - Diracik di Rumah, Disajikan dengan Hati</p>
+            <h1 class="fw-bold mb-3">Secangkir Kehangatan Khas Nusantara</h1>
+            <p class="text-muted mb-4">
+              Kopi Nusantara menghadirkan biji kopi pilihan dari pelosok Indonesia,
+              diseduh langsung setiap hari tanpa bahan pengawet. Nikmati dari layar HP,
+              tablet, atau laptop Anda - tampilan kami menyesuaikan di mana pun Anda
+              membuka halaman ini.
+            </p>
+            <!-- flex-column (mobile) -> flex-sm-row (>= 576px): tombol berjajar ke samping -->
+            <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center justify-content-lg-start">
+              <a href="#menu" class="btn btn-primary btn-lg rounded-pill px-4">Lihat Menu</a>
+              <a href="#kontak" class="btn btn-outline-primary btn-lg rounded-pill px-4">Pesan Sekarang</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 text-center">
+            <!-- img-fluid: gambar tidak pernah melebihi lebar kolomnya -->
+            <img src="images/cangkir-kopi.jpeg" class="img-fluid rounded-4 shadow hero-img"
+                 alt="Ilustrasi cangkir Kopi Nusantara">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU FAVORIT (Grid 12 kolom + Card Bootstrap) ============ -->
+    <section class="py-5" id="menu">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-2">Menu Favorit Kami</h2>
+        <p class="text-center text-muted mb-4">Empat pilihan yang paling sering dipesan pelanggan kami.</p>
+
+        <!-- Tombol filter kategori (jQuery, dipertahankan dari Pertemuan 5).
+             Gaya tombol memakai class Bootstrap: btn btn-outline-primary rounded-pill.
+             Class .active menandai tombol yang sedang dipilih. -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="menuFilter">
+          <button class="btn btn-outline-primary rounded-pill px-4 filter-btn active" type="button" data-filter="semua">Semua</button>
+          <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" type="button" data-filter="dingin">Dingin</button>
+          <button class="btn btn-outline-primary rounded-pill px-4 filter-btn" type="button" data-filter="panas">Panas</button>
+        </div>
+
+        <!-- row g-4: baris grid dengan jarak (gutter) antarkartu.
+             Setiap kolom memakai 3 breakpoint berbeda:
+             - col-12   : ponsel (< 768px)   -> 1 kartu per baris (12/12)
+             - col-md-6 : tablet (>= 768px)  -> 2 kartu per baris (6/12)
+             - col-lg-3 : laptop (>= 992px)  -> 4 kartu per baris (3/12)
+             Atribut data-kategori dipakai fitur filter jQuery di script.js -->
+        <div class="row g-4" id="menuGrid">
+          <div class="col-12 col-md-6 col-lg-3 menu-item" data-kategori="dingin">
+            <!-- card: kartu menu. h-100 menyamakan tinggi semua kartu dalam satu baris -->
+            <article class="card menu-card h-100 border-0 rounded-4 shadow-sm">
+              <img src="images/es-kopi-kelapa.svg" class="card-img-top" alt="Ilustrasi Es Kopi Kelapa">
+              <!-- card-body dibuat d-flex flex-column agar baris harga selalu di bawah (mt-auto) -->
+              <div class="card-body d-flex flex-column">
+                <span class="badge rounded-pill badge-kopi align-self-start mb-2">Dingin</span>
+                <h3 class="card-title h5 fw-bold">Es Kopi Kelapa</h3>
+                <p class="card-text text-muted small">Espresso segar berpadu dengan air kelapa muda asli dan sedikit gula aren.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="price fw-bold">Rp 22.000</span>
+                  <!-- Tombol suka: jumlahnya diubah lewat manipulasi DOM jQuery -->
+                  <button class="btn btn-sm rounded-pill like-btn" type="button" aria-label="Sukai Es Kopi Kelapa">
+                    <span class="heart">♡</span>
+                    <span class="like-count">12</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3 menu-item" data-kategori="dingin">
+            <article class="card menu-card h-100 border-0 rounded-4 shadow-sm">
+              <img src="images/kopi-susu-gula-aren.svg" class="card-img-top" alt="Ilustrasi Kopi Susu Gula Aren">
+              <div class="card-body d-flex flex-column">
+                <span class="badge rounded-pill badge-kopi align-self-start mb-2">Dingin</span>
+                <h3 class="card-title h5 fw-bold">Kopi Susu Gula Aren</h3>
+                <p class="card-text text-muted small">Perpaduan klasik kopi robusta lokal, susu segar, dan gula aren asli.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="price fw-bold">Rp 20.000</span>
+                  <button class="btn btn-sm rounded-pill like-btn" type="button" aria-label="Sukai Kopi Susu Gula Aren">
+                    <span class="heart">♡</span>
+                    <span class="like-count">27</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3 menu-item" data-kategori="panas">
+            <article class="card menu-card h-100 border-0 rounded-4 shadow-sm">
+              <img src="images/americano.svg" class="card-img-top" alt="Ilustrasi Americano">
+              <div class="card-body d-flex flex-column">
+                <span class="badge rounded-pill badge-kopi align-self-start mb-2">Panas</span>
+                <h3 class="card-title h5 fw-bold">Americano</h3>
+                <p class="card-text text-muted small">Espresso murni dengan air panas, cocok untuk penikmat kopi hitam.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="price fw-bold">Rp 18.000</span>
+                  <button class="btn btn-sm rounded-pill like-btn" type="button" aria-label="Sukai Americano">
+                    <span class="heart">♡</span>
+                    <span class="like-count">9</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3 menu-item" data-kategori="panas">
+            <article class="card menu-card h-100 border-0 rounded-4 shadow-sm">
+              <img src="images/cappuccino.svg" class="card-img-top" alt="Ilustrasi Cappuccino">
+              <div class="card-body d-flex flex-column">
+                <span class="badge rounded-pill badge-kopi align-self-start mb-2">Panas</span>
+                <h3 class="card-title h5 fw-bold">Cappuccino</h3>
+                <p class="card-text text-muted small">Espresso dengan foam susu lembut dan taburan bubuk cokelat.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="price fw-bold">Rp 24.000</span>
+                  <button class="btn btn-sm rounded-pill like-btn" type="button" aria-label="Sukai Cappuccino">
+                    <span class="heart">♡</span>
+                    <span class="like-count">18</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TENTANG KAMI (Grid Bootstrap: gambar + teks) ============
+         Mobile: gambar di atas teks. Tablet (md) ke atas: bersebelahan. -->
+    <section class="about-section py-5" id="tentang">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-5 col-lg-4 text-center">
+            <img src="images/biji-kopi.jpeg" class="img-fluid rounded-4 shadow-sm about-img"
+                 alt="Ilustrasi biji kopi Nusantara">
+          </div>
+
+          <div class="col-12 col-md-7 col-lg-8">
+            <h2 class="fw-bold mb-3">Tentang Kopi Nusantara</h2>
+            <p class="text-muted mb-4">
+              Berawal dari dapur rumahan di tahun 2019, Kopi Nusantara tumbuh dari
+              kecintaan terhadap biji kopi lokal Indonesia - dari Gayo, Toraja, hingga
+              Kintamani. Kami percaya secangkir kopi terbaik lahir dari proses yang
+              jujur dan bahan yang berkualitas.
+            </p>
+            <!-- list-unstyled menghapus bullet bawaan; d-flex + gap-2 menyejajarkan ikon & teks -->
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex align-items-center gap-2 mb-2"><span>🌱</span> Biji kopi pilihan langsung dari petani lokal</li>
+              <li class="d-flex align-items-center gap-2 mb-2"><span>🏠</span> Diseduh segar setiap hari di dapur rumahan kami</li>
+              <li class="d-flex align-items-center gap-2"><span>📱</span> Bisa dipesan kapan saja lewat WhatsApp</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (Komponen Bootstrap: accordion) ============
+         Menggantikan accordion jQuery manual dari Pertemuan 5.
+         - data-bs-toggle="collapse" + data-bs-target : tombol membuka jawaban
+         - data-bs-parent="#faqAccordion" : hanya satu jawaban yang terbuka
+         - class "collapsed" pada tombol & "collapse" pada jawaban = kondisi awal tertutup -->
+    <section class="py-5" id="faq">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-2">Pertanyaan yang Sering Diajukan</h2>
+        <p class="text-center text-muted mb-4">Klik salah satu pertanyaan untuk melihat jawabannya.</p>
+
+        <!-- mx-auto menengahkan accordion yang lebarnya dibatasi di style.css -->
+        <div class="accordion faq-accordion mx-auto shadow-sm" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                Kopi Nusantara buka jam berapa?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Kami buka setiap hari pukul 08.00 sampai 21.00 WIB, termasuk pada hari libur nasional.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                Bagaimana cara memesan kopi?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Pemesanan dapat dilakukan melalui WhatsApp di 0812-3456-7890, atau dengan mengisi
+                formulir pada bagian Hubungi &amp; Pesan di halaman ini.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                Apakah kopi menggunakan biji lokal?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Ya. Seluruh menu kami diracik dari biji kopi lokal Indonesia seperti Gayo, Toraja,
+                dan Kintamani, yang dibeli langsung dari petani.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                Apakah tersedia layanan antar?
+              </button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Tersedia untuk wilayah Bandung dengan radius maksimal 5 km dari kedai. Pesanan di atas
+                Rp 100.000 mendapatkan gratis ongkos kirim.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                Bisakah memesan kopi tanpa gula?
+              </button>
+            </h3>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Bisa. Tingkat kemanisan setiap minuman dapat disesuaikan, mulai dari tanpa gula,
+                sedikit gula, hingga normal. Cukup tuliskan permintaan Anda saat memesan.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAK (Grid Bootstrap + Form Bootstrap) ============
+         Mobile & tablet: info di atas formulir. Laptop (lg): bersebelahan. -->
+    <section class="py-5" id="kontak">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-lg-5">
+            <h2 class="fw-bold mb-3">Hubungi &amp; Pesan</h2>
+            <p class="text-muted">Isi formulir berikut, tim kami akan segera menghubungi Anda kembali.</p>
+            <p class="mb-2"><strong>Alamat:</strong> Jl. Melati No. 12, Bandung</p>
+            <p class="mb-2"><strong>WhatsApp:</strong> 0812-3456-7890</p>
+            <p class="mb-0"><strong>Jam Buka:</strong> Setiap hari, 08.00 - 21.00</p>
+          </div>
+
+          <div class="col-12 col-lg-7">
+            <!-- Form memakai class Bootstrap: form-label & form-control.
+                 bg-white p-4 rounded-4 shadow-sm = kotak formulir tanpa CSS kustom -->
+            <form class="bg-white p-4 rounded-4 shadow-sm" id="contactForm" novalidate>
+              <div class="mb-3">
+                <label for="nama" class="form-label fw-semibold">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama lengkap Anda" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-semibold">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nama@email.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label fw-semibold">Pesan</label>
+                <textarea class="form-control" id="pesan" name="pesan" rows="4"
+                          placeholder="Tuliskan pesanan atau pertanyaan Anda" required></textarea>
+                <!-- form-text: teks bantuan kecil. Penghitung karakter diperbarui lewat event keyup jQuery -->
+                <div class="form-text text-end" id="charCount">0 karakter</div>
+              </div>
+              <!-- w-100: tombol selebar formulir -->
+              <button type="submit" class="btn btn-primary w-100 rounded-pill">Kirim Pesan</button>
+              <!-- Alert Bootstrap untuk hasil validasi; class alert-success / alert-danger
+                   dipasang oleh jQuery, lalu dimunculkan dengan efek fadeIn() -->
+              <div class="alert mt-3 mb-0 form-feedback" id="formFeedback" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer text-center py-4">
+    <div class="container">
+      <p class="mb-1 small">&copy; 2026 Kopi Nusantara. Seluruh hak cipta dilindungi.</p>
+      <p class="mb-0 footer-note">Dibuat sebagai contoh proyek Tugas Studi Kasus - Bootstrap, Pertemuan 6 (Front-End Programming).</p>
+    </div>
+  </footer>
+
+  <!-- Tombol kembali ke atas: posisinya memakai utility class Bootstrap
+       (position-fixed bottom-0 end-0 m-3), muncul/hilang lewat jQuery -->
+  <button class="btn back-to-top position-fixed bottom-0 end-0 m-3 m-lg-4 rounded-circle shadow"
+          id="backToTop" type="button" aria-label="Kembali ke atas">▲</button>
+
+  <!-- Pustaka jQuery (CDN resmi) untuk fitur interaktif dari Pertemuan 5 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Cadangan: bila CDN tidak dapat diakses (offline), pakai salinan lokal -->
+  <script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>');</script>
+  <!-- Bootstrap JS bundle (sudah termasuk Popper), diletakkan sebelum </body>.
+       Wajib untuk komponen interaktif: navbar toggler (collapse) & accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script kustom -->
+  <script src="script.js"></script>
+</body>
+</html>

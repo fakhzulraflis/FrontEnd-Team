@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f3e6da"/>
+  <ellipse cx="200" cy="262" rx="90" ry="10" fill="#e3d3c4"/>
+  <!-- gelas berlapis: gula aren, susu, kopi -->
+  <path d="M140 70 L260 70 L246 258 L154 258 Z" fill="#fdf7f2" stroke="#c99a76" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M149 215 L251 215 L246 252 L154 252 Z" fill="#6f4e37"/>
+  <path d="M146 150 L254 150 L251 215 L149 215 Z" fill="#fdf7f2"/>
+  <path d="M143 100 L257 100 L254 150 L146 150 Z" fill="#c99a76"/>
+  <!-- sedotan -->
+  <path d="M222 24 L214 40 L214 205" fill="none" stroke="#b98060" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- tetes gula aren -->
+  <path d="M300 160 C300 160 284 182 284 194 A16 16 0 0 0 316 194 C316 182 300 160 300 160 Z" fill="#6f4e37"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f3e6da"/>
+  <ellipse cx="190" cy="262" rx="90" ry="10" fill="#e3d3c4"/>
+  <!-- kelapa muda -->
+  <circle cx="300" cy="222" r="38" fill="#8fae6b"/>
+  <circle cx="300" cy="222" r="26" fill="#fdf7f2"/>
+  <!-- gelas -->
+  <path d="M130 70 L250 70 L236 258 L144 258 Z" fill="#fdf7f2" stroke="#c99a76" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M138 150 L242 150 L236 252 L144 252 Z" fill="#efe3cf"/>
+  <path d="M134 100 L246 100 L242 150 L138 150 Z" fill="#b98060"/>
+  <!-- es batu -->
+  <rect x="152" y="112" width="30" height="30" rx="6" fill="#fdf7f2" opacity="0.85" transform="rotate(-10 167 127)"/>
+  <rect x="196" y="120" width="28" height="28" rx="6" fill="#fdf7f2" opacity="0.85" transform="rotate(12 210 134)"/>
+  <!-- sedotan -->
+  <path d="M212 24 L204 40 L204 200" fill="none" stroke="#6f4e37" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

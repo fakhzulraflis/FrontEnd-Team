@@ -1,0 +1,224 @@
+/* ==========================================================
+   Kopi Nusantara - Bootstrap (Pertemuan 6)
+
+   Layout (grid, spacing, flexbox) sudah ditangani class Bootstrap
+   di index.html, sehingga file ini TIDAK lagi berisi media query.
+   Isinya hanya kustomisasi ringan: menimpa variabel CSS Bootstrap
+   (--bs-*) agar warna & tipografi tetap sesuai identitas visual
+   Kopi Nusantara dari tugas sebelumnya, bukan tampilan default.
+   ========================================================== */
+
+/* ---------- Variabel warna identitas Kopi Nusantara ---------- */
+:root {
+  --coklat-tua: #6f4e37;
+  --coklat-muda: #c99a76;
+  --krem: #fdf7f2;
+  --krem-tua: #f3e6da;
+  --aksen: #b98060;
+  --teks-muda: #8a7669;
+
+  /* Menimpa variabel global Bootstrap: font, warna teks & latar body */
+  --bs-body-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --bs-body-color: var(--coklat-tua);
+  --bs-body-bg: var(--krem);
+  /* Dipakai class .text-muted & .form-text -> warna teks sekunder coklat */
+  --bs-secondary-color: var(--teks-muda);
+}
+
+/* Navbar memakai fixed-top (keluar dari alur halaman), jadi body diberi
+   jarak atas setinggi navbar agar hero tidak tertutup */
+body {
+  padding-top: 66px;
+}
+
+/* Saat link navbar diklik, judul section tidak tertutup navbar */
+section {
+  scroll-margin-top: 66px;
+}
+
+/* ---------- Tombol Bootstrap (btn-primary & btn-outline-primary) ---------- */
+/* Warna biru bawaan diganti coklat lewat variabel --bs-btn-* */
+.btn-primary {
+  --bs-btn-bg: var(--coklat-muda);
+  --bs-btn-border-color: var(--coklat-muda);
+  --bs-btn-hover-bg: var(--aksen);
+  --bs-btn-hover-border-color: var(--aksen);
+  --bs-btn-active-bg: var(--aksen);
+  --bs-btn-active-border-color: var(--aksen);
+  --bs-btn-focus-shadow-rgb: 201, 154, 118;
+  font-weight: 600;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--coklat-tua);
+  --bs-btn-border-color: var(--coklat-muda);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--coklat-muda);
+  --bs-btn-hover-border-color: var(--coklat-muda);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--coklat-muda);
+  --bs-btn-active-border-color: var(--coklat-muda);
+  --bs-btn-focus-shadow-rgb: 201, 154, 118;
+  font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  --bs-navbar-color: var(--coklat-tua);
+  --bs-navbar-hover-color: var(--aksen);
+  --bs-navbar-active-color: var(--aksen);
+  --bs-navbar-brand-color: var(--coklat-tua);
+  --bs-navbar-brand-hover-color: var(--coklat-tua);
+  --bs-navbar-toggler-border-color: var(--coklat-muda);
+  --bs-navbar-toggler-focus-width: 0.2rem;
+  /* Ikon hamburger diberi warna coklat (default Bootstrap abu-abu gelap) */
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%236f4e37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+}
+
+/* Ikon cangkir pada logo dibungkus lingkaran coklat */
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--coklat-tua);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* Kata "Nusantara" diberi warna aksen agar logo tidak terlihat datar */
+.logo-accent {
+  color: var(--aksen);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  background-color: var(--krem-tua);
+}
+
+.eyebrow {
+  color: var(--aksen);
+  font-size: 0.9rem;
+}
+
+/* Gambar hero dibatasi agar tidak terlalu besar di layar lebar */
+.hero-img {
+  max-width: 320px;
+}
+
+/* ---------- Kartu menu (card Bootstrap) ---------- */
+/* Efek naik sedikit saat kartu disorot */
+.menu-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(111, 78, 55, 0.12) !important;
+}
+
+.menu-card .card-title {
+  color: var(--coklat-tua);
+}
+
+.price {
+  color: var(--coklat-tua);
+}
+
+/* Badge kategori dengan warna krem, bukan warna bawaan Bootstrap */
+.badge-kopi {
+  background-color: var(--krem-tua);
+  color: var(--aksen);
+}
+
+/* Tombol suka: class .liked ditambahkan jQuery saat menu disukai */
+.like-btn {
+  --bs-btn-color: var(--teks-muda);
+  --bs-btn-border-color: var(--krem-tua);
+  --bs-btn-hover-color: var(--aksen);
+  --bs-btn-hover-border-color: var(--coklat-muda);
+  --bs-btn-active-border-color: var(--coklat-muda);
+  background-color: #fff;
+}
+
+.like-btn.liked {
+  background-color: var(--krem-tua);
+  border-color: var(--coklat-muda);
+  color: var(--aksen);
+}
+
+/* ---------- Tentang kami ---------- */
+.about-section {
+  background-color: var(--krem-tua);
+}
+
+.about-img {
+  max-width: 260px;
+}
+
+/* ---------- FAQ (accordion Bootstrap) ---------- */
+/* Lebar accordion dibatasi agar nyaman dibaca; warna diatur lewat --bs-accordion-* */
+.faq-accordion {
+  max-width: 720px;
+  --bs-accordion-color: var(--coklat-tua);
+  --bs-accordion-bg: #fff;
+  --bs-accordion-border-color: var(--krem-tua);
+  --bs-accordion-border-radius: 1rem;
+  --bs-accordion-inner-border-radius: calc(1rem - 1px);
+  --bs-accordion-btn-color: var(--coklat-tua);
+  --bs-accordion-active-color: var(--aksen);
+  --bs-accordion-active-bg: var(--krem);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(201, 154, 118, 0.35);
+  /* Ikon panah diberi warna coklat (tertutup) & aksen (terbuka) */
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%236f4e37' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23b98060' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+  border-radius: 1rem;
+}
+
+.faq-accordion .accordion-button {
+  font-weight: 600;
+}
+
+.faq-accordion .accordion-body {
+  color: var(--teks-muda);
+}
+
+/* ---------- Formulir kontak ---------- */
+/* Warna fokus input diganti coklat (default Bootstrap biru) */
+.form-control:focus {
+  border-color: var(--coklat-muda);
+  box-shadow: 0 0 0 0.2rem rgba(201, 154, 118, 0.25);
+}
+
+/* Alert hasil validasi disembunyikan dulu, lalu dimunculkan fadeIn() jQuery */
+.form-feedback {
+  display: none;
+}
+
+/* ---------- Tombol kembali ke atas ---------- */
+/* Disembunyikan sejak awal; ditampilkan fadeIn() setelah halaman di-scroll */
+.back-to-top {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--coklat-tua);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--aksen);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--aksen);
+  display: none;
+  width: 48px;
+  height: 48px;
+  z-index: 1020;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--coklat-tua);
+  color: var(--krem-tua);
+}
+
+.footer-note {
+  color: #d9c3b0;
+  font-size: 0.78rem;
+}

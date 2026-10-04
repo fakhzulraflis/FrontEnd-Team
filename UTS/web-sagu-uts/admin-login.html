@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Masuk Admin — Sagu Nusantara</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="assets/images/logo-sagu.png">
+
+    <script src="data.js"></script>
+</head>
+
+<body class="admin-base login-page" data-page="login">
+    <main class="login">
+        <div class="login__card">
+            <div class="batik-strip" role="presentation"></div>
+
+            <div class="login__body">
+                <a href="index.html" class="brand" aria-label="Kembali ke website Sagu Nusantara">
+                    <span class="media brand__logo"><img src="assets/images/logo-sagu.png" alt=""></span>
+                    <span class="brand__name">Sagu Nusantara</span>
+                </a>
+
+                <h1 class="login__title">Masuk dashboard</h1>
+                <p class="login__sub">Kelola seluruh konten website Sagu Nusantara.</p>
+
+                <form id="loginForm">
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" autocomplete="username" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <div class="field__password">
+                            <input type="password" id="password" name="password" autocomplete="current-password" required>
+                            <button type="button" class="field__toggle" id="togglePassword" aria-pressed="false">Lihat</button>
+                        </div>
+                    </div>
+
+                    <p class="form-error" id="loginError" role="alert" hidden></p>
+
+                    <button type="submit" class="btn btn--primary btn--block">Masuk</button>
+                </form>
+
+                <a href="index.html" class="login__back">← Kembali ke website</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

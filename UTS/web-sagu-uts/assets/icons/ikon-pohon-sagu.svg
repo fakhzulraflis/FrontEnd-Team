@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <linearGradient id="batang" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#6e4428"/>
+            <stop offset="0.45" stop-color="#9a6a42"/>
+            <stop offset="1" stop-color="#6e4428"/>
+        </linearGradient>
+
+        <!-- satu pelepah daun dari titik (0,0), ujungnya melengkung ke kanan -->
+        <g id="pelepah">
+            <path d="M0 0 C-9 -12 -8 -32 8 -44 C9 -28 8 -12 0 0 Z"
+                  stroke="#2f5e2c" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M0 -3 C1 -16 2 -30 7 -40" fill="none"
+                  stroke="#a9d98a" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+        </g>
+        <!-- versi cermin untuk sisi kiri -->
+        <use id="pelepah-kiri" href="#pelepah" transform="scale(-1 1)"/>
+    </defs>
+
+    <!-- batang -->
+    <path d="M43 46 L57 46 C60 62 66 76 64 88 Q63 95 50 95 Q37 95 36 88 C34 76 40 62 43 46 Z"
+          fill="url(#batang)" stroke="#4e3019" stroke-width="2.5" stroke-linejoin="round"/>
+
+    <!-- cincin bekas pelepah -->
+    <g fill="none" stroke="#dcbb8a" stroke-width="3.2" stroke-linecap="round">
+        <path d="M44.5 58 Q50 60.5 55.5 58"/>
+        <path d="M42.5 68 Q50 71 57.5 68"/>
+        <path d="M40.5 78 Q50 81.5 59.5 78"/>
+        <path d="M39.5 88 Q50 91 60.5 88"/>
+    </g>
+
+    <!-- pelepah belakang (hijau tua) -->
+    <g fill="#3f7a3a">
+        <use href="#pelepah-kiri" transform="translate(50 48) rotate(-62)"/>
+        <use href="#pelepah-kiri" transform="translate(50 48) rotate(-28)"/>
+        <use href="#pelepah" transform="translate(50 48) rotate(-6)"/>
+        <use href="#pelepah" transform="translate(50 48) rotate(28)"/>
+        <use href="#pelepah" transform="translate(50 48) rotate(62)"/>
+    </g>
+
+    <!-- pelepah depan (hijau muda) -->
+    <g fill="#5f9e49">
+        <use href="#pelepah-kiri" transform="translate(50 48) rotate(-45) scale(0.85)"/>
+        <use href="#pelepah-kiri" transform="translate(50 48) rotate(-12) scale(0.85)"/>
+        <use href="#pelepah" transform="translate(50 48) rotate(14) scale(0.85)"/>
+        <use href="#pelepah" transform="translate(50 48) rotate(45) scale(0.85)"/>
+    </g>
+
+    <!-- pucuk -->
+    <circle cx="50" cy="48" r="4" fill="#4d8a3f" stroke="#2f5e2c" stroke-width="1.5"/>
+</svg>

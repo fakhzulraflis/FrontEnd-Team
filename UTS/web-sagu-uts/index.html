@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagu Nusantara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/logo-sagu.png">
+    <script src="data.js"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="navbar">
+            <a href="#beranda" class="brand">
+                <img src="assets/images/logo-sagu.png" alt="Logo Sagu Nusantara" class="brand-logo">
+                <span class="brand-name" data-setting="siteName">Sagu Nusantara</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#beranda" class="nav-link active">Beranda</a>
+                <a href="#tentang-sagu" class="nav-link">Tentang Sagu</a>
+                <a href="#proses-pengolahan" class="nav-link">Proses Pengolahan</a>
+                <a href="#kuliner-sagu" class="nav-link">Kuliner Sagu</a>
+                <a href="#persebaran" class="nav-link">Persebaran</a>
+                <a href="#quiz" class="nav-link">Quiz</a>
+            </nav>
+
+            <a href="admin-login.html" class="settings-button" aria-label="Masuk ke dashboard admin" title="Dashboard admin">
+                <svg class="settings-icon" viewBox="0 0 24 24">
+                    <path d="M19.4 13a7.8 7.8 0 0 0 0-2l2.1-1.6-2-3.4-2.5 1a8.2 8.2 0 0 0-1.7-1L15 3.3h-4L10.6 6a8.2 8.2 0 0 0-1.7 1L6.4 6l-2 3.4L6.5 11a7.8 7.8 0 0 0 0 2l-2.1 1.6 2 3.4 2.5-1a8.2 8.2 0 0 0 1.7 1l.4 2.7h4l.4-2.7a8.2 8.2 0 0 0 1.7-1l2.5 1 2-3.4L19.4 13zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="beranda">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="hero-eyebrow" data-setting="heroEyebrow">Pangan Pusaka Indonesia Timur</p>
+
+                    <h1 data-setting="siteName">Sagu Nusantara</h1>
+
+                    <h2 data-setting="tagline">Mengenal Kembali Pangan Warisan Indonesia</h2>
+
+                    <p class="hero-description" data-setting="heroDescription">
+                        Sagu merupakan salah satu sumber pangan tradisional Indonesia yang telah menjadi
+                        makanan pokok masyarakat selama ratusan tahun, khususnya di wilayah timur Indonesia.
+                        Website ini mengajak pengguna untuk mengenal sejarah, budaya, dan ragam kuliner
+                        berbahan dasar sagu.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#kuliner-sagu" class="btn btn-primary">Jelajahi Kuliner →</a>
+                        <a href="#tentang-sagu" class="btn btn-outline">Tentang Sagu</a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="assets/images/hero-hutan-sagu.jpg" alt="Hutan Sagu" data-setting-src="heroImage">
+                </div>
+            </div>
+        </section>
+
+        <div class="pembatas" role="presentation"></div>
+
+        <section class="tentang" id="tentang-sagu">
+            <div class="tentang-inner">
+                <p class="section-eyebrow">Mengenal Lebih Jauh</p>
+                <h2 class="section-title">Tentang Sagu</h2>
+
+                <div class="tentang-grid">
+
+                    <article class="tentang-card">
+                        <img class="tentang-card-image" src="assets/images/tentang-apa-itu-sagu.jpg" alt="Batang pohon sagu yang baru ditebang">
+                        <div class="tentang-card-box">
+                            <p class="tentang-card-number">01 —</p>
+                            <h3 class="tentang-card-title">Apa itu Sagu?</h3>
+                            <p class="tentang-card-desc">
+                                Sagu adalah tepung pati yang diekstrak dari batang pohon rumbia
+                                (Metroxylon sagu). Satu pohon sagu dapat menghasilkan ratusan
+                                kilogram tepung yang menjadi sumber karbohidrat utama bagi
+                                masyarakat di kawasan timur Indonesia.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tentang-card">
+                        <img class="tentang-card-image" src="assets/images/tentang-sejarah-sagu.jpg" alt="Masyarakat tradisional mengolah batang sagu">
+                        <div class="tentang-card-box">
+                            <p class="tentang-card-number">02 —</p>
+                            <h3 class="tentang-card-title">Sejarah Sagu</h3>
+                            <p class="tentang-card-desc">
+                                Jauh sebelum beras masuk sebagai makanan pokok, masyarakat Papua,
+                                Maluku, dan pesisir Sulawesi telah mengandalkan sagu selama
+                                ratusan tahun. Sagu tercatat dalam catatan pelaut Eropa abad
+                                ke-16 sebagai "roti pohon" khas Nusantara.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tentang-card">
+                        <img class="tentang-card-image" src="assets/images/tentang-mengapa-penting.jpg" alt="Pesisir dan hutan sagu saat matahari terbenam">
+                        <div class="tentang-card-box">
+                            <p class="tentang-card-number">03 —</p>
+                            <h3 class="tentang-card-title">Mengapa Sagu itu Penting?</h3>
+                            <p class="tentang-card-desc">
+                                Pohon sagu tumbuh subur di lahan basah tanpa perlu pupuk kimia,
+                                menjadikannya sumber pangan yang ramah lingkungan dan
+                                berkelanjutan, sekaligus penjaga ekosistem rawa gambut di
+                                Indonesia timur.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="tentang-card">
+                        <img class="tentang-card-image" src="assets/images/tentang-manfaat-sagu.jpg" alt="Hidangan papeda dan lauk berbahan dasar sagu">
+                        <div class="tentang-card-box">
+                            <p class="tentang-card-number">04 —</p>
+                            <h3 class="tentang-card-title">Manfaat Sagu</h3>
+                            <p class="tentang-card-desc">
+                                Bebas gluten, rendah lemak, dan mudah dicerna. Sagu juga menjadi
+                                sumber energi tahan lama karena kandungan karbohidrat
+                                kompleksnya, serta bahan baku ramah penderita intoleransi
+                                gluten.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="pembatas" role="presentation"></div>
+
+        <section class="proses" id="proses-pengolahan">
+            <div class="proses-inner">
+                <p class="section-eyebrow">Batang Menjadi Tepung?</p>
+                <h2 class="section-title">Proses Pengolahan Sagu</h2>
+                <p class="proses-subtitle">Klik setiap tahap untuk melihat penjelasan lengkapnya.</p>
+
+                <div class="proses-steps">
+                    <button class="proses-step active" type="button" data-step="0">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-pohon-sagu.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Pohon Sagu</span>
+                    </button>
+
+                    <button class="proses-step" type="button" data-step="1">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-penebangan.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Penebangan</span>
+                    </button>
+
+                    <button class="proses-step" type="button" data-step="2">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-empulur.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Pengambilan Empulur</span>
+                    </button>
+
+                    <button class="proses-step" type="button" data-step="3">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-penyaringan.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Penyaringan</span>
+                    </button>
+
+                    <button class="proses-step" type="button" data-step="4">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-pengeringan.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Pengeringan</span>
+                    </button>
+
+                    <button class="proses-step" type="button" data-step="5">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-tepung-sagu.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Tepung Sagu</span>
+                    </button>
+
+                    <button class="proses-step" type="button" data-step="6">
+                        <span class="proses-step-icon">
+                            <img src="assets/icons/ikon-penyajian.svg" alt="">
+                        </span>
+                        <span class="proses-step-label">Penyajian</span>
+                    </button>
+                </div>
+
+                <div class="proses-detail">
+                    <img class="proses-detail-image" src="assets/images/proses-pohon-sagu.jpg" alt="Pohon sagu yang siap dipanen">
+
+                    <div class="proses-detail-box">
+                        <p class="proses-detail-badge">Langkah 1 dari 7</p>
+                        <p class="proses-detail-number">01 — Pohon Sagu</p>
+                        <h3 class="proses-detail-title">Pohon Sagu</h3>
+                        <p class="proses-detail-desc">
+                            Pohon sagu (Metroxylon sagu) umumnya dipilih pada usia 8–12 tahun, ketika
+                            kandungan pati di dalam batang telah mencapai titik maksimal. Salah satu tanda
+                            bahwa pohon telah memasuki masa siap panen adalah munculnya kuncup bunga pada
+                            bagian pucuk. Pada tahap ini, batang sagu memiliki cadangan pati yang cukup
+                            tinggi sehingga lebih optimal untuk diolah menjadi tepung sagu. Setelah pohon
+                            yang sesuai dipilih, batang kemudian ditebang dan dipersiapkan untuk memasuki
+                            tahap pengolahan berikutnya, yaitu pengupasan dan pengambilan empulur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pembatas" role="presentation"></div>
+
+        <section class="kuliner" id="kuliner-sagu">
+            <div class="kuliner-inner">
+                <p class="section-eyebrow">Ragam Rasa Nusantara</p>
+                <h2 class="section-title">Kuliner Sagu Nusantara</h2>
+                <p class="section-subtitle">Cari tahu makanan sagu favoritmu berdasarkan nama ataupun daerah.</p>
+
+                <div class="kuliner-filter">
+                    <div class="kuliner-search">
+                        <label for="kulinerSearch" class="kuliner-label">Cari Kuliner</label>
+                        <div class="kuliner-search-box">
+                            <svg class="kuliner-search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="10.5" cy="10.5" r="6.5"/>
+                                <path d="m15.5 15.5 5 5"/>
+                            </svg>
+                            <input type="search" id="kulinerSearch" placeholder="Nama makanan, daerah, atau bahan..." autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="kuliner-dropdown">
+                        <label for="filterWilayah" class="kuliner-label">Wilayah</label>
+                        <select id="filterWilayah">
+                            <option value="Semua">Semua</option>
+                        </select>
+                    </div>
+
+                    <div class="kuliner-dropdown">
+                        <label for="filterKategori" class="kuliner-label">Jenis</label>
+                        <select id="filterKategori">
+                            <option value="Semua">Semua</option>
+                        </select>
+                    </div>
+
+                    <div class="kuliner-dropdown">
+                        <label for="filterPenyajian" class="kuliner-label">Penyajian</label>
+                        <select id="filterPenyajian">
+                            <option value="Semua">Semua</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="kuliner-info" id="kulinerInfo" aria-live="polite"></p>
+
+                <div class="kuliner-grid" id="kulinerGrid"></div>
+            </div>
+        </section>
+
+        <div class="pembatas" role="presentation"></div>
+
+        <section class="persebaran" id="persebaran">
+            <div class="persebaran-inner">
+                <p class="section-eyebrow">Jelajahi Nusantara</p>
+                <h2 class="section-title">Daerah Persebaran Sagu</h2>
+                <p class="section-subtitle">Klik salah satu wilayah di bawah untuk melihat informasinya.</p>
+
+                <div class="persebaran-layout">
+                    <div class="wilayah-list" id="wilayahList" aria-label="Daftar wilayah"></div>
+                    <div class="wilayah-detail" id="wilayahDetail" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pembatas" role="presentation"></div>
+
+        <section class="fakta" id="fakta-menarik">
+            <div class="fakta-inner">
+                <p class="section-eyebrow">Tahukah Kamu?</p>
+                <h2 class="section-title">Fakta Menarik</h2>
+                <p class="section-subtitle">Hal-hal kecil tentang sagu yang jarang diketahui.</p>
+
+                <div class="fakta-card" id="faktaCard">
+                    <div class="fakta-photo">
+                        <img class="fakta-image" id="faktaImage" src="assets/images/fkm-1.png" alt="">
+                        <p class="fakta-counter" id="faktaCounter">Fakta 1 dari 12</p>
+                    </div>
+
+                    <div class="fakta-content">
+                        <p class="fakta-text" id="faktaText" aria-live="polite"></p>
+
+                        <div class="fakta-bottom">
+                            <div class="fakta-vote">
+                                <button type="button" class="fakta-vote-button" id="faktaLike" aria-pressed="false" aria-label="Suka fakta ini">
+                                    <img src="assets/icons/like.png" alt="">
+                                    <span id="faktaLikeCount">0</span>
+                                </button>
+                                <button type="button" class="fakta-vote-button" id="faktaDislike" aria-pressed="false" aria-label="Tidak suka fakta ini">
+                                    <img src="assets/icons/dislike.png" alt="">
+                                    <span id="faktaDislikeCount">0</span>
+                                </button>
+                            </div>
+
+                            <div class="fakta-nav">
+                                <button type="button" class="fakta-prev" id="faktaPrev" aria-label="Fakta sebelumnya">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+                                </button>
+                                <button type="button" class="btn btn-primary" id="faktaNext">Next →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="pembatas" role="presentation"></div>
+
+        <section class="quiz" id="quiz">
+            <div class="quiz-inner">
+                <p class="section-eyebrow">Uji Pengetahuanmu</p>
+                <h2 class="section-title">Quiz Sagu Nusantara</h2>
+                <p class="section-subtitle">Seberapa kenal kamu dengan sagu? Jawab pertanyaan di bawah ini!</p>
+
+                <div class="quiz-card" id="quizCard" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="pembatas" role="presentation"></div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <img class="footer-image" src="assets/images/footer-kiri.jpg" alt="Kebun pohon sagu" data-setting-src="footerImageLeft">
+
+            <div class="footer-center">
+                <a href="#beranda" class="footer-brand">
+                    <img src="assets/images/logo-sagu.png" alt="" class="footer-logo">
+                    <span class="footer-name" data-setting="siteName">Sagu Nusantara</span>
+                </a>
+                <p class="footer-text" data-setting="footerText">
+                    Sagu Nusantara dibuat untuk mengedukasi masyarakat mengenai sagu sebagai makanan pokok
+                    tradisional Indonesia yang mulai terlupakan, serta memperkenalkan ragam kuliner nusantara
+                    berbahan dasar sagu kepada generasi muda.
+                </p>
+                <p class="footer-copy" data-setting="copyright">© Sagu Nusantara. Front-End UTS Project - Kelompok 02.</p>
+            </div>
+
+            <img class="footer-image" src="assets/images/footer-kanan.jpg" alt="Sagu basah dibungkus daun sagu" data-setting-src="footerImageRight">
+        </div>
+    </footer>
+
+    <dialog class="kuliner-modal" id="kulinerModal" aria-labelledby="kulinerModalTitle">
+        <button type="button" class="kuliner-modal-close" data-close aria-label="Tutup detail">×</button>
+        <div class="kuliner-modal-box" id="kulinerModalBody"></div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>

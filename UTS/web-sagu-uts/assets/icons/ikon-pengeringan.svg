@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <radialGradient id="matahari" cx="0.4" cy="0.38" r="0.7">
+            <stop offset="0" stop-color="#ffe08a"/>
+            <stop offset="0.6" stop-color="#fbb93a"/>
+            <stop offset="1" stop-color="#f29a1f"/>
+        </radialGradient>
+        <path id="sinar" d="M50 5 L56.5 18 L43.5 18 Z"/>
+    </defs>
+
+    <!-- sinar -->
+    <g fill="#f8ae2e" stroke="#d9861c" stroke-width="2" stroke-linejoin="round">
+        <use href="#sinar"/>
+        <use href="#sinar" transform="rotate(30 50 50)"/>
+        <use href="#sinar" transform="rotate(60 50 50)"/>
+        <use href="#sinar" transform="rotate(90 50 50)"/>
+        <use href="#sinar" transform="rotate(120 50 50)"/>
+        <use href="#sinar" transform="rotate(150 50 50)"/>
+        <use href="#sinar" transform="rotate(180 50 50)"/>
+        <use href="#sinar" transform="rotate(210 50 50)"/>
+        <use href="#sinar" transform="rotate(240 50 50)"/>
+        <use href="#sinar" transform="rotate(270 50 50)"/>
+        <use href="#sinar" transform="rotate(300 50 50)"/>
+        <use href="#sinar" transform="rotate(330 50 50)"/>
+    </g>
+
+    <!-- inti matahari -->
+    <circle cx="50" cy="50" r="23" fill="url(#matahari)" stroke="#d9861c" stroke-width="3"/>
+
+    <!-- kilau -->
+    <path d="M36 44 A15 15 0 0 1 46 34" fill="none" stroke="#ffffff"
+          stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+</svg>
